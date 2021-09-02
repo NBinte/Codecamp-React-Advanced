@@ -12,11 +12,15 @@ const UseEffectBasics = () => {
     if (value > 0) {
       document.title = `New Messages(${value})`;
     }
-  }, [value]);
+  }, [value]); //works everytime the value is changed
 
   useEffect(() => {
     console.log("boop once");
-  }, []);
+  }, []); //works only in first render
+
+  useEffect(() => {
+    console.log("once?");
+  }); //works after every render
 
   console.log("render component");
   return (

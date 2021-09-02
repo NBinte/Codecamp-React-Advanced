@@ -5,11 +5,13 @@ import React from "react";
 //import Setup from "./tutorial/1-useState/setup/4-useState-object";
 // import Setup from "./tutorial/1-useState/setup/5-useState-counter";
 // import Final from "./tutorial/1-useState/final/3-useState-array";
-import Final from "./tutorial/2-useEffect/setup/1-useEffect-basics";
+// import Setup from "./tutorial/2-useEffect/setup/1-useEffect-basics";
+import Setup from "./tutorial/2-useEffect/setup/2-useEffect-cleanup";
+
 function App() {
   return (
     <div className="container">
-      <Final />
+      <Setup />
     </div>
   );
 }
