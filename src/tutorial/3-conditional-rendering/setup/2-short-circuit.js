@@ -3,10 +3,12 @@ import React, { useState } from "react";
 // ternary operator
 
 const ShortCircuit = () => {
-  const [text, setText] = useState("Boba tea");
-  //const [text, setText] = useState("");
-  const firstValue = text || "hello world";
-  const secondValue = text && "hello world";
+  //const [text, setText] = useState("Boba tea");
+  const [text, setText] = useState("");
+  // const firstValue = text || "hello world";
+  // const secondValue = text && "hello world";
+
+  const [isError, setIsError] = useState(false);
 
   return (
     <>
@@ -21,9 +23,20 @@ const ShortCircuit = () => {
 
       <h1>{text || "Milk tea"}</h1>
 
+      <button
+        className="btn"
+        onClick={() => {
+          setIsError(!isError);
+        }}
+      >
+        Toggle error
+      </button>
+
+      {isError && <h1>Error...</h1>}
+
       {/* {!text && <h1>Want Some?</h1>} */}
 
-      {text && <h1>Want Some?</h1>}
+      {/* {text && <h1>Want Some?</h1>} */}
     </>
   );
 };
