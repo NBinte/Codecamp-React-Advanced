@@ -6,7 +6,7 @@ import { data } from "../../../data";
 const reducer = (state, action) => {
   //MUST RETURN A STATE
 
-  console.log(state, action);
+  // console.log(state, action);
 
   if (action.type === "ADD_ITEM") {
     const newPeople = [...state.people, action.payload];
@@ -24,6 +24,13 @@ const reducer = (state, action) => {
       ...state,
       isModalOpen: true,
       modalContent: "Please enter value",
+    };
+  }
+
+  if (action.type === "CLOSE_MODAL") {
+    return {
+      ...state,
+      isModalOpen: false,
     };
   }
 
@@ -53,9 +60,15 @@ const Index = () => {
     }
   };
 
+  const closeModal = () => {
+    dispatch({ type: "CLOSE_MODAL" });
+  };
+
   return (
     <>
-      {state.isModalOpen && <Modal modalContent={state.modalContent} />}
+      {state.isModalOpen && (
+        <Modal modalContent={state.modalContent} closeModal={closeModal} />
+      )}
 
       <form action="" onSubmit={submitHandler} className="form">
         <div>
