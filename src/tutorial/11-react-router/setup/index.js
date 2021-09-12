@@ -20,9 +20,10 @@ const ReactRouterSetup = () => {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/people">
+        <Route exact path="/people">
           <People />
         </Route>
+        <Route path="/people/person/:id" children={<Person />}></Route>
         <Route path="*">
           <Error />
         </Route>
